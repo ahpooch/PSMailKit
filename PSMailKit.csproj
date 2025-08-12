@@ -1,9 +1,40 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net9.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <PackageId>PSMailKit</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>ahpooch</Authors>
+    <Product>PSMailKit</Product>
+    <Description>MailKit functionality converted to Powershell CmdLets.</Description>
+    <PackageLicenseUrl></PackageLicenseUrl>
+    <PackageProjectUrl></PackageProjectUrl>
+    <RepositoryUrl>https://github.com/ahpooch/PSMailKit.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
   </PropertyGroup>
 
+  <ItemGroup>
+    <!-- https://www.nuget.org/packages/MailKit#versions-body-tab -->
+    <PackageReference Include="MailKit" Version="4.13.0" />
+
+    <!-- https://www.nuget.org/packages/MimeKit#versions-body-tab -->
+    <PackageReference Include="MimeKit" Version="4.13.0" />
+
+    <!-- https://www.nuget.org/packages/PowerShellStandard.Library#versions-body-tab -->
+    <PackageReference Include="PowerShellStandard.Library" Version="5.1.1" PrivateAssets="all" />
+
+    <!-- https://www.nuget.org/packages/System.Memory#versions-body-tab -->
+    <!-- Referencing System.Memory 4.6.3 is the simplest solution to resolve dependency conflicts
+    that occur in Windows PowerShell (PowerShell 5.1).
+    PowerShell 7 (based on .NET Core) handles assembly loading differently and does not encounter this issue.
+    Other soulution could be to 'Add an AssemblyResolve event handler to create a dynamic binding redirect'.
+    See https://devblogs.microsoft.com/powershell/resolving-powershell-module-assembly-dependency-conflicts/#add-an-assemblyresolve-event-handler-to-create-a-dynamic-binding-redirect -->
+    <PackageReference Include="System.Memory" Version="4.6.3" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <!-- CopyToPublishDirectory (Always or PreserveNewest) -->
+    <None Include="PSMailKit.psd1" CopyToPublishDirectory="Always" />
+    <None Include="Formats/*.ps1xml" CopyToPublishDirectory="Always" />
+  </ItemGroup>
 </Project>
