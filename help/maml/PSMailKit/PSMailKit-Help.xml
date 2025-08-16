@@ -1,0 +1,684 @@
+<?xml version="1.0" encoding="utf-8"?>
+<helpItems xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" schema="maml" xmlns="http://msh">
+  <command:command>
+    <command:details>
+      <command:name>Get-SMTPCapabilities</command:name>
+      <maml:description>
+        <maml:para>Gets SMTP extensions supported by a server, with descriptions and RFC links.</maml:para>
+      </maml:description>
+      <command:verb>Get</command:verb>
+      <command:noun>SMTPCapabilities</command:noun>
+    </command:details>
+    <maml:description>
+      <maml:para>The Get-SMTPCapabilities cmdlet retrieves a list of SMTP extensions supported by the specified server. These extensions provide additional features and capabilities beyond the basic SMTP protocol, often related to security and functionality. If the remote server requires authentication, credentials can be supplied directly using the -Credential parameter or will be requested interactively. For each extension received from the server, the cmdlet will output a short name, description, and a link to the relevant RFC for further details.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Get-SMTPCapabilities</maml:name>
+        <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
+          <maml:name>CheckCertificateRevocation</maml:name>
+          <maml:description>
+            <maml:para>{{ Fill CheckCertificateRevocation Description }}</maml:para>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">System.Boolean</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
+          <maml:name>Credential</maml:name>
+          <maml:description>
+            <maml:para>{{ Fill Credential Description }}</maml:para>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">System.Management.Automation.PSCredential</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="false" globbing="false" pipelineInput="false" position="1" aliases="none">
+          <maml:name>Port</maml:name>
+          <maml:description>
+            <maml:para>{{ Fill Port Description }}</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="true">System.Int32</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
+          <maml:name>SecureSocketOption</maml:name>
+          <maml:description>
+            <maml:para>{{ Fill SecureSocketOption Description }}</maml:para>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">System.String</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="false" globbing="false" pipelineInput="false" position="0" aliases="none">
+          <maml:name>SmtpServer</maml:name>
+          <maml:description>
+            <maml:para>{{ Fill SmtpServer Description }}</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="true">System.String</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
+        <maml:name>CheckCertificateRevocation</maml:name>
+        <maml:description>
+          <maml:para>{{ Fill CheckCertificateRevocation Description }}</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">System.Boolean</command:parameterValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
+        <maml:name>Credential</maml:name>
+        <maml:description>
+          <maml:para>{{ Fill Credential Description }}</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">System.Management.Automation.PSCredential</command:parameterValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="false" globbing="false" pipelineInput="false" position="1" aliases="none">
+        <maml:name>Port</maml:name>
+        <maml:description>
+          <maml:para>{{ Fill Port Description }}</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="true">System.Int32</command:parameterValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
+        <maml:name>SecureSocketOption</maml:name>
+        <maml:description>
+          <maml:para>{{ Fill SecureSocketOption Description }}</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">System.String</command:parameterValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="false" globbing="false" pipelineInput="false" position="0" aliases="none">
+        <maml:name>SmtpServer</maml:name>
+        <maml:description>
+          <maml:para>{{ Fill SmtpServer Description }}</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="true">System.String</command:parameterValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes />
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <dev:name>PSMailKit.Commands.GetSMTPCapabilitiesCommand+ExtensionInfo</dev:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>{{ Fill in the Description }}</maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para>{{ Fill in the Notes }}</maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>--------- Example 1: Get list of SMTP extensions from server ---------</maml:title>
+        <maml:introduction>
+          <maml:para>```Powershell
+PS C:\&gt; Get-SMTPCapabilities -SMTPServer smtp.contoso.com -Port 25
+```</maml:para>
+        </maml:introduction>
+        <dev:code />
+        <dev:remarks />
+      </command:example>
+      <command:example>
+        <maml:title>--------- Example 2: Get list of SMTP extensions from server using credential object and StartTls ---------</maml:title>
+        <maml:introduction>
+          <maml:para>```Powershell
+PS C:\&gt; Get-SMTPCapabilities -SMTPServer exchange-01.contoso.com -Port 465 -SecureSocketOption StartTls -Credential (Get-Credential username)
+```</maml:para>
+        </maml:introduction>
+        <dev:code />
+        <dev:remarks />
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version</maml:linkText>
+        <command:uri />
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command>
+    <command:details>
+      <command:name>Send-MailMessage2</command:name>
+      <maml:description>
+        <maml:para>Send-MailMessage2 – A secure, feature-rich replacement for Send-MailMessage, supporting attachments, inline images (HTML emails), priority flags, DSN, delegation ("Send As"/"On Behalf"), and custom Reply-To. Built on MailKit/MimeKit.</maml:para>
+      </maml:description>
+      <command:verb>Send</command:verb>
+      <command:noun>MailMessage2</command:noun>
+    </command:details>
+    <maml:description>
+      <maml:para>The Send-MailMessage2 cmdlet is designed to replace the deprecated Send-MailMessage cmdlet. Leveraging the MailKit and MimeKit libraries, Send-MailMessage2 ensures secure communication with an SMTP server (e.g., using client certificates) and offers advanced functionality.</maml:para>
+      <maml:para>This cmdlet enables creating emails with attachments and inline attachments, which are essential for building HTML email templates where images are embedded directly into the HTML body. It also supports:</maml:para>
+      <maml:para>- Setting email importance (priority) and Delivery Status Notifications (DSN). - Sending emails as "Send As" or "Send on Behalf" (if the user has the required permissions on the mail server). - Specifying a custom Reply-To address and other advanced features.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Send-MailMessage2</maml:name>
+        <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
+          <maml:name>Attachments</maml:name>
+          <maml:description>
+            <maml:para>The attachments. Specify an array of paths to file attachments that will be added to the message.</maml:para>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">System.String[]</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
+          <maml:name>BccList</maml:name>
+          <maml:description>
+            <maml:para>Set the list of addresses in the Bcc header. Recipients in the Blind-Carbon-Copy list will not be visible to the other recipients of the message.</maml:para>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">MimeKit.InternetAddressList</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
+          <maml:name>CcList</maml:name>
+          <maml:description>
+            <maml:para>Set the list of addresses that will be in the Cc header.</maml:para>
+            <maml:para>The addresses in the Cc header are secondary recipients of the message and are usually not the individuals being directly addressed in the content of the message.</maml:para>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">MimeKit.InternetAddressList</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
+          <maml:name>CheckCertificateRevocation</maml:name>
+          <maml:description>
+            <maml:para>Parameter `-CheckCerificateRevocation:$false` could be specified to disable certificate revocation when connecting via SSL/TLS.</maml:para>
+            <maml:para>Normally, certificate revocation check should not be disabled for security reasons, but there are times when it may be necessary to disable it.</maml:para>
+            <maml:para>For example, most Certificate Authorities are probably pretty good at keeping their CRL and/or OCSP servers up 24/7, but occasionally they do go down or are otherwise unreachable due to other network problems between the client and the Certificate Authority. When this happens, it becomes impossible to check the revocation status of one or more of the certificates in the chain resulting in an SslHandshakeException being thrown in the Connect method. If this becomes a problem, it may become desirable to set CheckCertificateRevocation to $false.</maml:para>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">System.Boolean</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
+          <maml:name>ClientCertificates</maml:name>
+          <maml:description>
+            <maml:para>Some servers may require the client SSL certificates in order to allow the user to connect. This parameter set the client SSL certificates that will be used when connecting to SMTP server.</maml:para>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">System.Security.Cryptography.X509Certificates.X509Certificate2[]</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
+          <maml:name>Confirm</maml:name>
+          <maml:description>
+            <maml:para>If used as `-Confirm:$true` then prompts you for confirmation before sending each message.</maml:para>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">System.Management.Automation.SwitchParameter</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
+          <maml:name>Credential</maml:name>
+          <maml:description>
+            <maml:para>The PSCredential object that represents a set of security credentials: username and password.</maml:para>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">System.Management.Automation.PSCredential</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
+          <maml:name>Date</maml:name>
+          <maml:description>
+            <maml:para>Set the date of the message. Defaults to current date and offset based on timezone.</maml:para>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">System.DateTimeOffset</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
+          <maml:name>DeliveryStatusNotificationOptions</maml:name>
+          <maml:description>
+            <maml:para>Set the delivery status notification types.</maml:para>
+            <maml:para>You can specify the conditions under which the mail server will send a Delivery Status Notification. To define the conditions for receiving a DSN, you can use an array of possible values: "Failure", "Delay", "Success".</maml:para>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">System.String[]</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
+          <maml:name>DeliveryStatusNotificationTypeOption</maml:name>
+          <maml:description>
+            <maml:para>When using Delivery Status Notification (DSN) via the DeliveryStatusNotificationOptions parameter, DeliveryStatusNotificationTypeOption determines whether the SMTP server's DSN response contains only headers or the full original message. The default setting is Unspecified, letting the server decide the level of detail.</maml:para>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">System.String</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
+          <maml:name>From</maml:name>
+          <maml:description>
+            <maml:para>The list of addresses that will be set in the `From` header.</maml:para>
+            <maml:para>The `From` header specifies the author(s) of the message.</maml:para>
+            <maml:para>If more than one mail address is provided to `-From` parameter, `-Sender` parameter should be used to provide single mail address of the personal actually sending the message.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="true">MimeKit.InternetAddressList</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
+          <maml:name>HtmlBody</maml:name>
+          <maml:description>
+            <maml:para>Specify the html formatted version of the message body. Html template may link to any of the LinkedResources if they are provided with -InlineAttachments parameter.</maml:para>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">System.String</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
+          <maml:name>Importance</maml:name>
+          <maml:description>
+            <maml:para>The message importance value. Indicates the importance of a message.</maml:para>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">System.String</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
+          <maml:name>InlineAttachments</maml:name>
+          <maml:description>
+            <maml:para>Inline Attachments could be referenced in message HTML body by their ContentID.
+Image paths and their CIDs should be provided in a form of hashtables array.</maml:para>
+            <maml:para>Each hashtable must have `src` and `cid` keys.
+Hashtable structure: `@{src="path_to_file";cid="unique_content_id"}`
+Usage example: -InlineAttachments @{src="C:\1.jpg";cid="image_1"},@{src="C:\2.jpg";cid="image_2"}</maml:para>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">System.Collections.Hashtable[]</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
+          <maml:name>LogPath</maml:name>
+          <maml:description>
+            <maml:para>Log file path. If specified file is missing it will be created.</maml:para>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">System.String</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="false" globbing="false" pipelineInput="false" position="1" aliases="none">
+          <maml:name>Port</maml:name>
+          <maml:description>
+            <maml:para>The port to connect to. If the specified port is 0, then the default port will be used.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="true">System.Int32</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
+          <maml:name>ReplyTo</maml:name>
+          <maml:description>
+            <maml:para>The list of addresses in the Reply-To header.</maml:para>
+            <maml:para>When the list of addresses in the Reply-To header is not empty, it contains the address(es) where the author(s) of the message prefer that replies be sent.</maml:para>
+            <maml:para>When the list of addresses in the Reply-To header is empty, replies should be sent to the mailbox(es) specified in the From header.</maml:para>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">MimeKit.InternetAddressList</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
+          <maml:name>SecureSocketOption</maml:name>
+          <maml:description>
+            <maml:para>Secure socket options. Provides a way of specifying the SSL and/or TLS encryption that should be used for a connection.</maml:para>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">System.String</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
+          <maml:name>Sender</maml:name>
+          <maml:description>
+            <maml:para>The address in the Sender header. The sender may differ from the addresses in From if the message was sent by someone on behalf of someone else.</maml:para>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">MimeKit.MailboxAddress</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="false" globbing="false" pipelineInput="false" position="0" aliases="none">
+          <maml:name>SmtpServer</maml:name>
+          <maml:description>
+            <maml:para>The SMTP server host name to connect to.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="true">System.String</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
+          <maml:name>Subject</maml:name>
+          <maml:description>
+            <maml:para>Set the subject of the message.</maml:para>
+            <maml:para>The Subject is typically a short string denoting the topic of the message.</maml:para>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">System.String</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
+          <maml:name>TextBody</maml:name>
+          <maml:description>
+            <maml:para>Set the text body of the message.</maml:para>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">System.String</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
+          <maml:name>To</maml:name>
+          <maml:description>
+            <maml:para>The list of addresses that will be set in the `To` header.</maml:para>
+            <maml:para>The addresses in the `To` header are the primary recipients of the message.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="true">MimeKit.InternetAddressList</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
+          <maml:name>WhatIf</maml:name>
+          <maml:description>
+            <maml:para>Runs the command in a mode that only reports what would happen without performing the actions.</maml:para>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">System.Management.Automation.SwitchParameter</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
+        <maml:name>Attachments</maml:name>
+        <maml:description>
+          <maml:para>The attachments. Specify an array of paths to file attachments that will be added to the message.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">System.String[]</command:parameterValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
+        <maml:name>BccList</maml:name>
+        <maml:description>
+          <maml:para>Set the list of addresses in the Bcc header. Recipients in the Blind-Carbon-Copy list will not be visible to the other recipients of the message.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">MimeKit.InternetAddressList</command:parameterValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
+        <maml:name>CcList</maml:name>
+        <maml:description>
+          <maml:para>Set the list of addresses that will be in the Cc header.</maml:para>
+          <maml:para>The addresses in the Cc header are secondary recipients of the message and are usually not the individuals being directly addressed in the content of the message.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">MimeKit.InternetAddressList</command:parameterValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
+        <maml:name>CheckCertificateRevocation</maml:name>
+        <maml:description>
+          <maml:para>Parameter `-CheckCerificateRevocation:$false` could be specified to disable certificate revocation when connecting via SSL/TLS.</maml:para>
+          <maml:para>Normally, certificate revocation check should not be disabled for security reasons, but there are times when it may be necessary to disable it.</maml:para>
+          <maml:para>For example, most Certificate Authorities are probably pretty good at keeping their CRL and/or OCSP servers up 24/7, but occasionally they do go down or are otherwise unreachable due to other network problems between the client and the Certificate Authority. When this happens, it becomes impossible to check the revocation status of one or more of the certificates in the chain resulting in an SslHandshakeException being thrown in the Connect method. If this becomes a problem, it may become desirable to set CheckCertificateRevocation to $false.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">System.Boolean</command:parameterValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
+        <maml:name>ClientCertificates</maml:name>
+        <maml:description>
+          <maml:para>Some servers may require the client SSL certificates in order to allow the user to connect. This parameter set the client SSL certificates that will be used when connecting to SMTP server.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">System.Security.Cryptography.X509Certificates.X509Certificate2[]</command:parameterValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
+        <maml:name>Confirm</maml:name>
+        <maml:description>
+          <maml:para>If used as `-Confirm:$true` then prompts you for confirmation before sending each message.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">System.Management.Automation.SwitchParameter</command:parameterValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
+        <maml:name>Credential</maml:name>
+        <maml:description>
+          <maml:para>The PSCredential object that represents a set of security credentials: username and password.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">System.Management.Automation.PSCredential</command:parameterValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
+        <maml:name>Date</maml:name>
+        <maml:description>
+          <maml:para>Set the date of the message. Defaults to current date and offset based on timezone.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">System.DateTimeOffset</command:parameterValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
+        <maml:name>DeliveryStatusNotificationOptions</maml:name>
+        <maml:description>
+          <maml:para>Set the delivery status notification types.</maml:para>
+          <maml:para>You can specify the conditions under which the mail server will send a Delivery Status Notification. To define the conditions for receiving a DSN, you can use an array of possible values: "Failure", "Delay", "Success".</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">System.String[]</command:parameterValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
+        <maml:name>DeliveryStatusNotificationTypeOption</maml:name>
+        <maml:description>
+          <maml:para>When using Delivery Status Notification (DSN) via the DeliveryStatusNotificationOptions parameter, DeliveryStatusNotificationTypeOption determines whether the SMTP server's DSN response contains only headers or the full original message. The default setting is Unspecified, letting the server decide the level of detail.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">System.String</command:parameterValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
+        <maml:name>From</maml:name>
+        <maml:description>
+          <maml:para>The list of addresses that will be set in the `From` header.</maml:para>
+          <maml:para>The `From` header specifies the author(s) of the message.</maml:para>
+          <maml:para>If more than one mail address is provided to `-From` parameter, `-Sender` parameter should be used to provide single mail address of the personal actually sending the message.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="true">MimeKit.InternetAddressList</command:parameterValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
+        <maml:name>HtmlBody</maml:name>
+        <maml:description>
+          <maml:para>Specify the html formatted version of the message body. Html template may link to any of the LinkedResources if they are provided with -InlineAttachments parameter.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">System.String</command:parameterValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
+        <maml:name>Importance</maml:name>
+        <maml:description>
+          <maml:para>The message importance value. Indicates the importance of a message.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">System.String</command:parameterValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
+        <maml:name>InlineAttachments</maml:name>
+        <maml:description>
+          <maml:para>Inline Attachments could be referenced in message HTML body by their ContentID.
+Image paths and their CIDs should be provided in a form of hashtables array.</maml:para>
+          <maml:para>Each hashtable must have `src` and `cid` keys.
+Hashtable structure: `@{src="path_to_file";cid="unique_content_id"}`
+Usage example: -InlineAttachments @{src="C:\1.jpg";cid="image_1"},@{src="C:\2.jpg";cid="image_2"}</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">System.Collections.Hashtable[]</command:parameterValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
+        <maml:name>LogPath</maml:name>
+        <maml:description>
+          <maml:para>Log file path. If specified file is missing it will be created.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">System.String</command:parameterValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="false" globbing="false" pipelineInput="false" position="1" aliases="none">
+        <maml:name>Port</maml:name>
+        <maml:description>
+          <maml:para>The port to connect to. If the specified port is 0, then the default port will be used.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="true">System.Int32</command:parameterValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
+        <maml:name>ReplyTo</maml:name>
+        <maml:description>
+          <maml:para>The list of addresses in the Reply-To header.</maml:para>
+          <maml:para>When the list of addresses in the Reply-To header is not empty, it contains the address(es) where the author(s) of the message prefer that replies be sent.</maml:para>
+          <maml:para>When the list of addresses in the Reply-To header is empty, replies should be sent to the mailbox(es) specified in the From header.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">MimeKit.InternetAddressList</command:parameterValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
+        <maml:name>SecureSocketOption</maml:name>
+        <maml:description>
+          <maml:para>Secure socket options. Provides a way of specifying the SSL and/or TLS encryption that should be used for a connection.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">System.String</command:parameterValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
+        <maml:name>Sender</maml:name>
+        <maml:description>
+          <maml:para>The address in the Sender header. The sender may differ from the addresses in From if the message was sent by someone on behalf of someone else.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">MimeKit.MailboxAddress</command:parameterValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="false" globbing="false" pipelineInput="false" position="0" aliases="none">
+        <maml:name>SmtpServer</maml:name>
+        <maml:description>
+          <maml:para>The SMTP server host name to connect to.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="true">System.String</command:parameterValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
+        <maml:name>Subject</maml:name>
+        <maml:description>
+          <maml:para>Set the subject of the message.</maml:para>
+          <maml:para>The Subject is typically a short string denoting the topic of the message.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">System.String</command:parameterValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
+        <maml:name>TextBody</maml:name>
+        <maml:description>
+          <maml:para>Set the text body of the message.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">System.String</command:parameterValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
+        <maml:name>To</maml:name>
+        <maml:description>
+          <maml:para>The list of addresses that will be set in the `To` header.</maml:para>
+          <maml:para>The addresses in the `To` header are the primary recipients of the message.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="true">MimeKit.InternetAddressList</command:parameterValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
+        <maml:name>WhatIf</maml:name>
+        <maml:description>
+          <maml:para>Runs the command in a mode that only reports what would happen without performing the actions.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">System.Management.Automation.SwitchParameter</command:parameterValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes />
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <dev:name>System.Void</dev:name>
+        </dev:type>
+        <maml:description>
+          <maml:para>None</maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para />
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>--------- Example 1: Send simple message ---------</maml:title>
+        <maml:introduction>
+          <maml:para>```Powershell
+Send-MailMessage2 -To "bob@contoso.com" -From "fred@contoso.com" -Subject "Welcome" -TextBody "Welcolme to Contoso!" -SmtpServer "smtp.contoso.com" -Port 25
+```</maml:para>
+        </maml:introduction>
+        <dev:code />
+        <dev:remarks />
+      </command:example>
+      <command:example>
+        <maml:title>--------- Example 2: Send message using SecureSocketOption and user credential ---------</maml:title>
+        <maml:introduction>
+          <maml:para>```Powershell
+Send-MailMessage2 -To "bob@contoso.com" -From "fred@contoso.com" -Subject "Welcome" -TextBody "Welcolme to Contoso!" -SmtpServer "exch.contoso.com" -Port 465 -SecureSocketOption StartTls -Credential (Get-Credential fred)
+```</maml:para>
+        </maml:introduction>
+        <dev:code />
+        <dev:remarks />
+      </command:example>
+      <command:example>
+        <maml:title>--------- Example 3: Send message using client certificate ---------</maml:title>
+        <maml:introduction>
+          <maml:para>```Powershell
+Send-MailMessage2 -To "bob@contoso.com" -From "fred@contoso.com" -Subject "Welcome" -TextBody "Welcolme to Contoso!" -SmtpServer "exch.contoso.com" -Port 25 -ClientCertificates (Get-Item -Path 'Cert:\CurrentUser\My\44A0351360E57179D87D0CCDB20A291238E7CBD4')
+```</maml:para>
+        </maml:introduction>
+        <dev:code />
+        <dev:remarks />
+      </command:example>
+      <command:example>
+        <maml:title>--------- Example 4: Send message with Cc and Bcc and attachment ---------</maml:title>
+        <maml:introduction>
+          <maml:para>```Powershell
+Send-MailMessage2 -To "bob@contoso.com" -From "fred@contoso.com" -Subject "Daily reports" -TextBody "See daily reports in attachments." -SmtpServer "smtp.contoso.com" -Port 25 -CCList "raul@contoso.com,jim@contoso.com" -BCCList "bartholomew@contoso.com" -Attachments "C:\DailyReport.jpg","C:\DailyReport2.jpg"
+```</maml:para>
+        </maml:introduction>
+        <dev:code />
+        <dev:remarks />
+      </command:example>
+      <command:example>
+        <maml:title>--------- Example 5: Send message with ReplyTo and specified Importance ---------</maml:title>
+        <maml:introduction>
+          <maml:para>```Powershell
+Send-MailMessage2 -To "bob@contoso.com" -From "fred@contoso.com" -Subject "Welcome" -TextBody "Welcolme to Contoso!" -SmtpServer "smtp.contoso.com" -Port 25 -ReplyTo "hr@contoso.com" -Importance High
+```</maml:para>
+        </maml:introduction>
+        <dev:code />
+        <dev:remarks />
+      </command:example>
+      <command:example>
+        <maml:title>--------- Example 6: Send message as `Send as` ---------</maml:title>
+        <maml:introduction>
+          <maml:para>```Powershell
+Send-MailMessage2 -To "bob@contoso.com" -From "hr@contoso.com" -Subject "Welcome" -TextBody "Welcolme to Contoso!" -SmtpServer "smtp.contoso.com" -Port 25 -Credential (Get-Credential fred)
+```</maml:para>
+        </maml:introduction>
+        <dev:code />
+        <dev:remarks />
+      </command:example>
+      <command:example>
+        <maml:title>--------- Example 7: Send message as `Send on behalf` ---------</maml:title>
+        <maml:introduction>
+          <maml:para>```Powershell
+Send-MailMessage2 -To "bob@contoso.com" -From "hr@contoso.com" -Sender "fred@rowi.com" -Subject "Welcome" -TextBody "Welcolme to Contoso!" -SmtpServer "smtp.contoso.com" -Port 25 -Credential (Get-Credential fred)
+```</maml:para>
+        </maml:introduction>
+        <dev:code />
+        <dev:remarks />
+      </command:example>
+      <command:example>
+        <maml:title>--------- Example 8: Send message without certificate revocation check ---------</maml:title>
+        <maml:introduction>
+          <maml:para>```Powershell
+Send-MailMessage2 -To "bob@contoso.com" -From "fred@contoso.com" -Subject "We have a problem!" -TextBody "Hey, Bob! What's with our CRL and/or OCSP servers? The certificate revocation check process is failing right now and I forced to use -CheckCertificateRevocation:`$false to send this email!" -SmtpServer "exch.contoso.com" -Port 465 -SecureSocketOption StartTls -Credential (Get-Credential fred) -CheckCertificateRevocation:$false
+```</maml:para>
+        </maml:introduction>
+        <dev:code />
+        <dev:remarks />
+      </command:example>
+      <command:example>
+        <maml:title>--------- Example 9: Send message with inline attachments and HTML body ---------</maml:title>
+        <maml:introduction>
+          <maml:para>To use inline attachments or embedded images we should use `-InlineAttachments` parameter. Inline attachments specified by Hashtable[] which means that we profide inline attachments as array of hashtables.
+Example: `-InlineAttachments @{src="C:\1.jpg";cid="image1"},@{src="C:\2.jpg";cid="image2"}`.
+Next we should provide an HTML template to `-HTMLBody` parameter.
+You could create pretty HTML templates by using mjml. See the [documentation for mjml](https://documentation.mjml.io/) to use it.
+In the HTML template we should referenced inline attachments by its ContentID or `cid`.
+Example: `&lt;img height="auto" src="cid:my_image" style="border:0;display:block;outline:none;text-decoration:none;height:auto;width:100%;font-size:13px;" width="100"&gt;`.</maml:para>
+          <maml:para>&#x80;</maml:para>
+          <maml:para>See example of usage below. HTMLBody for this example was generated using [live version of mjml rebderer](https://mjml.io/try-it-live/).</maml:para>
+          <maml:para>&#x80;</maml:para>
+          <maml:para>```Powershell
+# See `src="cid:my_image"` at HTMLBody. It means we should provide InlineAttachment with cid=my_image to be able to use this embedded image.
+$HTMLBody = @"
+&lt;!doctype html&gt;&lt;html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office"&gt;&lt;head&gt;&lt;title&gt;&lt;/title&gt;&lt;!--[if !mso]&gt;&lt;!--&gt;&lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;&lt;!--&lt;![endif]--&gt;&lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8"&gt;&lt;meta name="viewport" content="width=device-width,initial-scale=1"&gt;&lt;style type="text/css"&gt;#outlook a { padding:0; }
+          body { margin:0;padding:0;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%; }
+          table, td { border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt; }
+          img { border:0;height:auto;line-height:100%; outline:none;text-decoration:none;-ms-interpolation-mode:bicubic; }
+          p { display:block;margin:13px 0; }&lt;/style&gt;&lt;!--[if mso]&gt;
+        &lt;noscript&gt;
+        &lt;xml&gt;
+        &lt;o:OfficeDocumentSettings&gt;
+          &lt;o:AllowPNG/&gt;
+          &lt;o:PixelsPerInch&gt;96&lt;/o:PixelsPerInch&gt;
+        &lt;/o:OfficeDocumentSettings&gt;
+        &lt;/xml&gt;
+        &lt;/noscript&gt;
+        &lt;![endif]--&gt;&lt;!--[if lte mso 11]&gt;
+        &lt;style type="text/css"&gt;
+          .mj-outlook-group-fix { width:100% !important; }
+        &lt;/style&gt;
+        &lt;![endif]--&gt;&lt;style type="text/css"&gt;@media only screen and (min-width:480px) {
+        .mj-column-per-100 { width:100% !important; max-width: 100%; }
+      }&lt;/style&gt;&lt;style media="screen and (min-width:480px)"&gt;.moz-text-html .mj-column-per-100 { width:100% !important; max-width: 100%; }&lt;/style&gt;&lt;style type="text/css"&gt;@media only screen and (max-width:480px) {
+      table.mj-full-width-mobile { width: 100% !important; }
+      td.mj-full-width-mobile { width: auto !important; }
+    }&lt;/style&gt;&lt;/head&gt;&lt;body style="word-spacing:normal;"&gt;&lt;div&gt;&lt;!--[if mso | IE]&gt;&lt;table align="center" border="0" cellpadding="0" cellspacing="0" class="" style="width:600px;" width="600" &gt;&lt;tr&gt;&lt;td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;"&gt;&lt;![endif]--&gt;&lt;div style="margin:0px auto;max-width:600px;"&gt;&lt;table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width:100%;"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td style="direction:ltr;font-size:0px;padding:20px 0;text-align:center;"&gt;&lt;!--[if mso | IE]&gt;&lt;table role="presentation" border="0" cellpadding="0" cellspacing="0"&gt;&lt;tr&gt;&lt;td class="" style="vertical-align:top;width:600px;" &gt;&lt;![endif]--&gt;&lt;div class="mj-column-per-100 mj-outlook-group-fix" style="font-size:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;"&gt;&lt;table border="0" cellpadding="0" cellspacing="0" role="presentation" style="vertical-align:top;" width="100%"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td align="left" style="font-size:0px;padding:10px 25px;word-break:break-word;"&gt;&lt;div style="font-family:helvetica;font-size:20px;line-height:1;text-align:left;color:#0862a2;"&gt;Example of embedded image using `-InlineAttachments` parameter.&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align="center" style="font-size:0px;padding:10px 25px;word-break:break-word;"&gt;&lt;p style="border-top:solid 4px #0862a2;font-size:1px;margin:0px auto;width:100%;"&gt;&lt;/p&gt;&lt;!--[if mso | IE]&gt;&lt;table align="center" border="0" cellpadding="0" cellspacing="0" style="border-top:solid 4px #0862a2;font-size:1px;margin:0px auto;width:550px;" role="presentation" width="550px" &gt;&lt;tr&gt;&lt;td style="height:0;line-height:0;"&gt; &amp;nbsp;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;![endif]--&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align="center" style="font-size:0px;padding:10px 25px;word-break:break-word;"&gt;&lt;table border="0" cellpadding="0" cellspacing="0" role="presentation" style="border-collapse:collapse;border-spacing:0px;"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td style="width:100px;"&gt;&lt;img height="auto" src="cid:my_image" style="border:0;display:block;outline:none;text-decoration:none;height:auto;width:100%;font-size:13px;" width="100"&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;&lt;!--[if mso | IE]&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;![endif]--&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;&lt;!--[if mso | IE]&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;![endif]--&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;
+"@</maml:para>
+          <maml:para>&#x80;</maml:para>
+          <maml:para>Send-MailMessage2 -To "bob@contoso.com" -From "fred@contoso.com" -Subject "Test embedded image" -HTMLBody $HTMLBody -InlineAttachments @{src="C:\ImageWithAnyName.jpg";cid="my_image"} -SmtpServer "smtp.contoso.com" -Port 25
+```</maml:para>
+        </maml:introduction>
+        <dev:code />
+        <dev:remarks />
+      </command:example>
+      <command:example>
+        <maml:title>--------- Example 10: Send message Delivery Status Notifications (DSN) ---------</maml:title>
+        <maml:introduction>
+          <maml:para>```Powershell
+Send-MailMessage2 -To "bob@contoso.com" -From "fred@contoso.com" -Subject "Welcome" -TextBody "Welcolme to Contoso!" -SmtpServer "smtp.contoso.com" -Port 25 -DeliveryStatusNotificationOptions "Failure", "Delay" -DeliveryStatusNotificationTypeOption "HeadersOnly"
+```</maml:para>
+        </maml:introduction>
+        <dev:code />
+        <dev:remarks />
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Online Version</maml:linkText>
+        <command:uri />
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+</helpItems>
