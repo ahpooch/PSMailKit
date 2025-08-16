@@ -133,7 +133,7 @@
     } # End of PrivateData hashtable
 
     # HelpInfo URI of this module
-    HelpInfoURI = 'https://github.com/ahpooch/PSMailKit/raw/refs/heads/main/maml/PSMailKit/PSMailKit-Help.xml'
+    HelpInfoURI = 'https://raw.githubusercontent.com/ahpooch/PSMailKit/refs/heads/main/maml/PSMailKit/PSMailKit-Help.xml'
 
     # Default prefix for commands exported from this module. Override the default prefix using Import-Module -Prefix.
     # DefaultCommandPrefix = ''
