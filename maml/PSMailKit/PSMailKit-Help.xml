@@ -134,7 +134,7 @@ PS C:\&gt; Get-SMTPCapabilities -SMTPServer exchange-01.contoso.com -Port 465 -S
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version</maml:linkText>
-        <command:uri />
+        <command:uri>https://github.com/ahpooch/PSMailKit/blob/main/help/PSMailKit/Get-SMTPCapabilities.md</command:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Online Version</maml:linkText>
@@ -685,7 +685,7 @@ Send-MailMessage2 -To "bob@contoso.com" -From "fred@contoso.com" -Subject "Welco
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version</maml:linkText>
-        <command:uri />
+        <command:uri>https://github.com/ahpooch/PSMailKit/blob/main/help/PSMailKit/Send-MailMessage2.md</command:uri>
       </maml:navigationLink>
       <maml:navigationLink>
         <maml:linkText>Online Version</maml:linkText>
