@@ -1,7 +1,7 @@
 ﻿---
 document type: cmdlet
 external help file: PSMailKit-Help.xml
-HelpUri: ''
+HelpUri: https://github.com/ahpooch/PSMailKit/blob/main/help/PSMailKit/Send-MailMessage2.md
 Locale: en-US
 Module Name: PSMailKit
 ms.date: 08.15.2025
@@ -694,4 +694,5 @@ None
 ## NOTES
 
 ## RELATED LINKS
-[Online Version](https://github.com/ahpooch/PSMailKit/blob/main/help/PSMailKit/Send-MailMessage2.md)
+
+[Online Version](https://github.com/ahpooch/PSMailKit/raw/refs/heads/main/maml/PSMailKit/PSMailKit-Help.xml)
