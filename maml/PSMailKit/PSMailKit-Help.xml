@@ -18,35 +18,37 @@
         <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
           <maml:name>CheckCertificateRevocation</maml:name>
           <maml:description>
-            <maml:para>{{ Fill CheckCertificateRevocation Description }}</maml:para>
+            <maml:para>Parameter `-CheckCerificateRevocation:$false` could be specified to disable certificate revocation when connecting via SSL/TLS.</maml:para>
+            <maml:para>Normally, certificate revocation check should not be disabled for security reasons, but there are times when it may be necessary to disable it.</maml:para>
+            <maml:para>For example, most Certificate Authorities are probably pretty good at keeping their CRL and/or OCSP servers up 24/7, but occasionally they do go down or are otherwise unreachable due to other network problems between the client and the Certificate Authority. When this happens, it becomes impossible to check the revocation status of one or more of the certificates in the chain resulting in an SslHandshakeException being thrown in the Connect method. If this becomes a problem, it may become desirable to set CheckCertificateRevocation to $false.</maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">System.Boolean</command:parameterValue>
         </command:parameter>
         <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
           <maml:name>Credential</maml:name>
           <maml:description>
-            <maml:para>{{ Fill Credential Description }}</maml:para>
+            <maml:para>The PSCredential object that represents a set of security credentials: username and password.</maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">System.Management.Automation.PSCredential</command:parameterValue>
         </command:parameter>
         <command:parameter required="true" variableLength="false" globbing="false" pipelineInput="false" position="1" aliases="none">
           <maml:name>Port</maml:name>
           <maml:description>
-            <maml:para>{{ Fill Port Description }}</maml:para>
+            <maml:para>The port to connect to. If the specified port is 0, then the default port will be used.</maml:para>
           </maml:description>
           <command:parameterValue required="true" variableLength="true">System.Int32</command:parameterValue>
         </command:parameter>
         <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
           <maml:name>SecureSocketOption</maml:name>
           <maml:description>
-            <maml:para>{{ Fill SecureSocketOption Description }}</maml:para>
+            <maml:para>Secure socket options. Provides a way of specifying the SSL and/or TLS encryption that should be used for a connection.</maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">System.String</command:parameterValue>
         </command:parameter>
         <command:parameter required="true" variableLength="false" globbing="false" pipelineInput="false" position="0" aliases="none">
           <maml:name>SmtpServer</maml:name>
           <maml:description>
-            <maml:para>{{ Fill SmtpServer Description }}</maml:para>
+            <maml:para>The SMTP server host name to connect to.</maml:para>
           </maml:description>
           <command:parameterValue required="true" variableLength="true">System.String</command:parameterValue>
         </command:parameter>
@@ -56,35 +58,37 @@
       <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
         <maml:name>CheckCertificateRevocation</maml:name>
         <maml:description>
-          <maml:para>{{ Fill CheckCertificateRevocation Description }}</maml:para>
+          <maml:para>Parameter `-CheckCerificateRevocation:$false` could be specified to disable certificate revocation when connecting via SSL/TLS.</maml:para>
+          <maml:para>Normally, certificate revocation check should not be disabled for security reasons, but there are times when it may be necessary to disable it.</maml:para>
+          <maml:para>For example, most Certificate Authorities are probably pretty good at keeping their CRL and/or OCSP servers up 24/7, but occasionally they do go down or are otherwise unreachable due to other network problems between the client and the Certificate Authority. When this happens, it becomes impossible to check the revocation status of one or more of the certificates in the chain resulting in an SslHandshakeException being thrown in the Connect method. If this becomes a problem, it may become desirable to set CheckCertificateRevocation to $false.</maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">System.Boolean</command:parameterValue>
       </command:parameter>
       <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
         <maml:name>Credential</maml:name>
         <maml:description>
-          <maml:para>{{ Fill Credential Description }}</maml:para>
+          <maml:para>The PSCredential object that represents a set of security credentials: username and password.</maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">System.Management.Automation.PSCredential</command:parameterValue>
       </command:parameter>
       <command:parameter required="true" variableLength="false" globbing="false" pipelineInput="false" position="1" aliases="none">
         <maml:name>Port</maml:name>
         <maml:description>
-          <maml:para>{{ Fill Port Description }}</maml:para>
+          <maml:para>The port to connect to. If the specified port is 0, then the default port will be used.</maml:para>
         </maml:description>
         <command:parameterValue required="true" variableLength="true">System.Int32</command:parameterValue>
       </command:parameter>
       <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="Named" aliases="none">
         <maml:name>SecureSocketOption</maml:name>
         <maml:description>
-          <maml:para>{{ Fill SecureSocketOption Description }}</maml:para>
+          <maml:para>Secure socket options. Provides a way of specifying the SSL and/or TLS encryption that should be used for a connection.</maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">System.String</command:parameterValue>
       </command:parameter>
       <command:parameter required="true" variableLength="false" globbing="false" pipelineInput="false" position="0" aliases="none">
         <maml:name>SmtpServer</maml:name>
         <maml:description>
-          <maml:para>{{ Fill SmtpServer Description }}</maml:para>
+          <maml:para>The SMTP server host name to connect to.</maml:para>
         </maml:description>
         <command:parameterValue required="true" variableLength="true">System.String</command:parameterValue>
       </command:parameter>
@@ -96,13 +100,13 @@
           <dev:name>PSMailKit.Commands.GetSMTPCapabilitiesCommand+ExtensionInfo</dev:name>
         </dev:type>
         <maml:description>
-          <maml:para>{{ Fill in the Description }}</maml:para>
+          <maml:para>For each extension received from the server, the cmdlet will output a short name, description, and a link to the relevant RFC for further details.</maml:para>
         </maml:description>
       </command:returnValue>
     </command:returnValues>
     <maml:alertSet>
       <maml:alert>
-        <maml:para>{{ Fill in the Notes }}</maml:para>
+        <maml:para />
       </maml:alert>
     </maml:alertSet>
     <command:examples>
@@ -131,6 +135,10 @@ PS C:\&gt; Get-SMTPCapabilities -SMTPServer exchange-01.contoso.com -Port 465 -S
       <maml:navigationLink>
         <maml:linkText>Online Version</maml:linkText>
         <command:uri />
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Online Version</maml:linkText>
+        <command:uri>https://github.com/ahpooch/PSMailKit/raw/refs/heads/main/maml/PSMailKit/PSMailKit-Help.xml</command:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
@@ -677,7 +685,7 @@ Send-MailMessage2 -To "bob@contoso.com" -From "fred@contoso.com" -Subject "Welco
     <command:relatedLinks>
       <maml:navigationLink>
         <maml:linkText>Online Version</maml:linkText>
-        <command:uri />
+        <command:uri>https://github.com/ahpooch/PSMailKit/raw/refs/heads/main/maml/PSMailKit/PSMailKit-Help.xml</command:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
