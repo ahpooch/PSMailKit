@@ -50,7 +50,11 @@ PS C:\> Get-SMTPCapabilities -SMTPServer exchange-01.contoso.com -Port 465 -Secu
 
 ### -CheckCertificateRevocation
 
-{{ Fill CheckCertificateRevocation Description }}
+Parameter `-CheckCerificateRevocation:$false` could be specified to disable certificate revocation when connecting via SSL/TLS.
+
+Normally, certificate revocation check should not be disabled for security reasons, but there are times when it may be necessary to disable it.
+
+For example, most Certificate Authorities are probably pretty good at keeping their CRL and/or OCSP servers up 24/7, but occasionally they do go down or are otherwise unreachable due to other network problems between the client and the Certificate Authority. When this happens, it becomes impossible to check the revocation status of one or more of the certificates in the chain resulting in an SslHandshakeException being thrown in the Connect method. If this becomes a problem, it may become desirable to set CheckCertificateRevocation to $false.
 
 ```yaml
 Type: System.Boolean
@@ -71,7 +75,7 @@ HelpMessage: ''
 
 ### -Credential
 
-{{ Fill Credential Description }}
+The PSCredential object that represents a set of security credentials: username and password.
 
 ```yaml
 Type: System.Management.Automation.PSCredential
@@ -92,7 +96,7 @@ HelpMessage: ''
 
 ### -Port
 
-{{ Fill Port Description }}
+The port to connect to. If the specified port is 0, then the default port will be used.
 
 ```yaml
 Type: System.Int32
@@ -113,7 +117,7 @@ HelpMessage: ''
 
 ### -SecureSocketOption
 
-{{ Fill SecureSocketOption Description }}
+Secure socket options. Provides a way of specifying the SSL and/or TLS encryption that should be used for a connection.
 
 ```yaml
 Type: System.String
@@ -128,13 +132,13 @@ ParameterSets:
   ValueFromPipelineByPropertyName: false
   ValueFromRemainingArguments: false
 DontShow: false
-AcceptedValues: []
+AcceptedValues: ["Auto", "StartTls", "StartTlsWhenAvailable", "SslOnConnect"]
 HelpMessage: ''
 ```
 
 ### -SmtpServer
 
-{{ Fill SmtpServer Description }}
+The SMTP server host name to connect to.
 
 ```yaml
 Type: System.String
@@ -166,13 +170,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### PSMailKit.Commands.GetSMTPCapabilitiesCommand+ExtensionInfo
 
-{{ Fill in the Description }}
+For each extension received from the server, the cmdlet will output a short name, description, and a link to the relevant RFC for further details.
 
 ## NOTES
 
-{{ Fill in the Notes }}
-
 ## RELATED LINKS
-
-{{ Fill in the related links here }}
-
