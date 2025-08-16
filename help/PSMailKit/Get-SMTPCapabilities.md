@@ -175,3 +175,5 @@ For each extension received from the server, the cmdlet will output a short name
 ## NOTES
 
 ## RELATED LINKS
+
+Online Version: https://github.com/ahpooch/PSMailKit/raw/refs/heads/main/maml/PSMailKit/PSMailKit-Help.xml
