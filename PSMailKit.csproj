@@ -31,10 +31,17 @@
     See https://devblogs.microsoft.com/powershell/resolving-powershell-module-assembly-dependency-conflicts/#add-an-assemblyresolve-event-handler-to-create-a-dynamic-binding-redirect -->
     <PackageReference Include="System.Memory" Version="4.6.3" />
   </ItemGroup>
-  
+
   <ItemGroup>
     <!-- CopyToPublishDirectory (Always or PreserveNewest) -->
     <None Include="PSMailKit.psd1" CopyToPublishDirectory="Always" />
     <None Include="Formats/*.ps1xml" CopyToPublishDirectory="Always" />
   </ItemGroup>
+  
+  <!-- Post-Build actions -->
+  <Target Name="PostBuild" AfterTargets="Build">
+    <Exec Command="echo Post-build task to copy files to publish directory" />
+    <!-- Copying maml help file to a publish -->
+    <Exec Command="xcopy &quot;$(ProjectDir)maml\PSMailKit\*.*&quot; &quot;$(TargetDir)publish&quot; /Y" />
+  </Target>
 </Project>
