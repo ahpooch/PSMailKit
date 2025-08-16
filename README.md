@@ -27,3 +27,14 @@
 </div>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+[contributors-shield]: https://img.shields.io/github/contributors/ahpooch/PSMailKit.svg?style=for-the-badge
+[contributors-url]: https://github.com/ahpooch/PSMailKit/graphs/contributors
+[stars-shield]: https://img.shields.io/github/stars/ahpooch/PSMailKit.svg?style=for-the-badge
+[stars-url]: https://github.com/ahpooch/PSMailKit/stargazers
+[issues-shield]: https://img.shields.io/github/issues/ahpooch/PSMailKit.svg?style=for-the-badge
+[issues-url]: https://github.com/ahpooch/PSMailKit/issues
+[license-shield]: https://img.shields.io/github/license/ahpooch/PSMailKit.svg?style=for-the-badge
+[license-url]: https://github.com/ahpooch/PSMailKit/blob/master/LICENSE.txt
