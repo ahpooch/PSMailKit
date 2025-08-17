@@ -37,11 +37,10 @@
     <None Include="PSMailKit.psd1" CopyToPublishDirectory="Always" />
     <None Include="Formats/*.ps1xml" CopyToPublishDirectory="Always" />
   </ItemGroup>
-  
-  <!-- Post-Build actions -->
-  <Target Name="PostBuild" AfterTargets="Build">
-    <Exec Command="echo Post-build task to copy files to publish directory" />
-    <!-- Copying maml help file to a publish -->
-    <Exec Command="xcopy &quot;$(ProjectDir)maml\PSMailKit\*.*&quot; &quot;$(TargetDir)publish&quot; /Y" />
+
+  <!-- Post-Publish actions -->
+  <Target Name="PostPublish" AfterTargets="Publish">
+    <Copy Condition="'$(Configuration)' == 'Debug'" SourceFiles="$(ProjectDir)maml\PSMailKit\PSMailKit-Help.xml" DestinationFolder="$(ProjectDir)\bin\Debug\netstandard2.0\publish\" SkipUnchangedFiles="true" />
+    <Copy Condition="'$(Configuration)' == 'Release'" SourceFiles="$(ProjectDir)maml\PSMailKit\PSMailKit-Help.xml" DestinationFolder="$(ProjectDir)\bin\Release\netstandard2.0\publish\" SkipUnchangedFiles="true" />
   </Target>
 </Project>
