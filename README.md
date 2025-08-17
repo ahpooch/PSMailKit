@@ -7,6 +7,7 @@
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
+[![build-validation](https://github.com/ahpooch/PSMailKit/actions/workflows/build-validation.yml/badge.svg)](https://github.com/ahpooch/PSMailKit/actions/workflows/build-validation.yml)
 
 <!-- PROJECT LOGO -->
 <div align="center">
