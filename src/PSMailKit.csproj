@@ -4,11 +4,15 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <PackageId>PSMailKit</PackageId>
     <Version>1.0.0</Version>
+    <AssemblyVersion>1.0.0</AssemblyVersion>
+    <FileVersion>1.0.0</FileVersion>
     <Authors>ahpooch</Authors>
+    <Company>Neon Cyber Crutches</Company>
     <Product>PSMailKit</Product>
+    <Copyright>Copyleft © 2025 Neon Cyber Crutches</Copyright>
     <Description>MailKit functionality converted to Powershell CmdLets.</Description>
-    <PackageLicenseUrl></PackageLicenseUrl>
-    <PackageProjectUrl></PackageProjectUrl>
+    <PackageLicenseUrl>https://github.com/ahpooch/PSMailKit/raw/refs/heads/main/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/ahpooch/PSMailKit</PackageProjectUrl>
     <RepositoryUrl>https://github.com/ahpooch/PSMailKit.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
   </PropertyGroup>
@@ -31,16 +35,19 @@
     See https://devblogs.microsoft.com/powershell/resolving-powershell-module-assembly-dependency-conflicts/#add-an-assemblyresolve-event-handler-to-create-a-dynamic-binding-redirect -->
     <PackageReference Include="System.Memory" Version="4.6.3" />
   </ItemGroup>
-
-  <ItemGroup>
-    <!-- CopyToPublishDirectory (Always or PreserveNewest) -->
-    <None Include="PSMailKit.psd1" CopyToPublishDirectory="Always" />
-    <None Include="Formats/*.ps1xml" CopyToPublishDirectory="Always" />
-  </ItemGroup>
-
-  <!-- Post-Publish actions -->
-  <Target Name="PostPublish" AfterTargets="Publish">
-    <Copy Condition="'$(Configuration)' == 'Debug'" SourceFiles="$(ProjectDir)maml\PSMailKit\PSMailKit-Help.xml" DestinationFolder="$(ProjectDir)\bin\Debug\netstandard2.0\publish\" SkipUnchangedFiles="true" />
-    <Copy Condition="'$(Configuration)' == 'Release'" SourceFiles="$(ProjectDir)maml\PSMailKit\PSMailKit-Help.xml" DestinationFolder="$(ProjectDir)\bin\Release\netstandard2.0\publish\" SkipUnchangedFiles="true" />
+  
+  <!-- switched to Invoke-Build procedures -->
+  <!-- <ItemGroup> -->
+    <!-- CopyToPublishDirectory (Always or PreserveNewest)  -->
+    <!-- <None Include="PSMailKit.psd1" CopyToPublishDirectory="Always" /> -->
+    <!-- <None Include="Formats/*.ps1xml" CopyToPublishDirectory="Always" /> -->
+  <!-- </ItemGroup> -->
+  
+  <!-- Post Clean action to remove bin and obj directories -->
+  <Target Name="PostClean" AfterTargets="Clean">
+    <!-- remove .\bin after clean -->
+    <RemoveDir Directories="$(BaseOutputPath)" />
+    <!-- remove .\obj after clean -->
+    <RemoveDir Directories="$(BaseIntermediateOutputPath)" />
   </Target>
 </Project>
