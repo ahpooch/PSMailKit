@@ -627,7 +627,7 @@ Send-MailMessage2 -To "bob@contoso.com" -From "fred@contoso.com" -Subject "We ha
       <command:example>
         <maml:title>--------- Example 9: Send message with inline attachments and HTML body ---------</maml:title>
         <maml:introduction>
-          <maml:para>To use inline attachments or embedded images we should use `-InlineAttachments` parameter. Inline attachments specified by Hashtable[] which means that we profide inline attachments as array of hashtables.
+          <maml:para>To use inline attachments or embedded images we should use `-InlineAttachments` parameter. Inline attachments specified by Hashtable[] which means that we provide inline attachments as array of hashtables.
 Example: `-InlineAttachments @{src="C:\1.jpg";cid="image1"},@{src="C:\2.jpg";cid="image2"}`.
 Next we should provide an HTML template to `-HTMLBody` parameter.
 You could create pretty HTML templates by using mjml. See the [documentation for mjml](https://documentation.mjml.io/) to use it.
