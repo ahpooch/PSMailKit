@@ -8,9 +8,9 @@ ms.date: 08.15.2025
 PlatyPS schema version: 2024-05-01
 title: Get-SMTPCapabilities
 ---
-
+<!-- markdownlint-disable MD025 -->
 # Get-SMTPCapabilities
-
+<!-- markdownlint-enable MD025 -->
 ## SYNOPSIS
 
 Gets SMTP extensions supported by a server, with descriptions and RFC links.
@@ -18,11 +18,12 @@ Gets SMTP extensions supported by a server, with descriptions and RFC links.
 ## SYNTAX
 
 ### __AllParameterSets
-
+<!-- markdownlint-disable MD040 -->
 ```
 Get-SMTPCapabilities [-SmtpServer] <string> [-Port] <int> [-Credential <pscredential>]
  [-SecureSocketOption <string>] [-CheckCertificateRevocation <bool>] [<CommonParameters>]
 ```
+<!-- markdownlint-Enable MD040 -->
 
 ## ALIASES
 

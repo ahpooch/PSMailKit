@@ -8,9 +8,9 @@ ms.date: 08.15.2025
 PlatyPS schema version: 2024-05-01
 title: Send-MailMessage2
 ---
-
+<!-- markdownlint-disable MD025 -->
 # Send-MailMessage2
-
+<!-- markdownlint-enable MD025 -->
 ## SYNOPSIS
 
 Send-MailMessage2 – A secure, feature-rich replacement for Send-MailMessage, supporting attachments, inline images (HTML emails), priority flags, DSN, delegation ("Send As"/"On Behalf"), and custom Reply-To. Built on MailKit/MimeKit.
@@ -18,7 +18,7 @@ Send-MailMessage2 – A secure, feature-rich replacement for Send-MailMessage, s
 ## SYNTAX
 
 ### __AllParameterSets
-
+<!-- markdownlint-disable MD040 -->
 ```
 Send-MailMessage2 [-SmtpServer] <string> [-Port] <int> -From <InternetAddressList>
  -To <InternetAddressList> [-Sender <MailboxAddress>] [-ReplyTo <InternetAddressList>]
@@ -30,6 +30,7 @@ Send-MailMessage2 [-SmtpServer] <string> [-Port] <int> -From <InternetAddressLis
  [-DeliveryStatusNotificationOptions <string[]>] [-CheckCertificateRevocation <bool>] [-WhatIf]
  [-Confirm] [<CommonParameters>]
 ```
+<!-- markdownlint-enable MD040 -->
 
 ## ALIASES
 
@@ -96,7 +97,7 @@ Send-MailMessage2 -To "bob@contoso.com" -From "fred@contoso.com" -Subject "We ha
 
 ### Example 9: Send message with inline attachments and HTML body
 
-To use inline attachments or embedded images we should use `-InlineAttachments` parameter. Inline attachments specified by Hashtable[] which means that we profide inline attachments as array of hashtables.
+To use inline attachments or embedded images we should use `-InlineAttachments` parameter. Inline attachments specified by Hashtable[] which means that we provide inline attachments as array of hashtables.
 Example: `-InlineAttachments @{src="C:\1.jpg";cid="image1"},@{src="C:\2.jpg";cid="image2"}`.
 Next we should provide an HTML template to `-HTMLBody` parameter.
 You could create pretty HTML templates by using mjml. See the [documentation for mjml](https://documentation.mjml.io/) to use it.

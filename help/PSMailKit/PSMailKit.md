@@ -9,9 +9,9 @@ ms.date: 08.17.2025
 PlatyPS schema version: 2024-05-01
 title: PSMailKit Module
 ---
-
+<!-- markdownlint-disable MD025 -->
 # PSMailKit Module
-
+<!-- markdownlint-enable MD025 -->
 ## Description
 
 PSMailKit is a PowerShell module designed for secure and advanced email operations, replacing outdated cmdlets with modern, feature-rich alternatives. Built on the MailKit and MimeKit libraries, it ensures reliable SMTP communication with support for client certificates, authentication flexibility, and extended protocol capabilities.
