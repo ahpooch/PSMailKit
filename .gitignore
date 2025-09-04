@@ -1,6 +1,9 @@
-/bin/*
-/obj/*
+/src/bin/*
+/src/obj/*
 debug.log
 
 # Backup files of Microsoft.Powershell.PlatyPS
 *.md.bak
+
+# Backup build files
+/output/*
